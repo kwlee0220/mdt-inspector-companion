@@ -1,1 +1,1 @@
-# mdt-inspector-companion
+# mdt-apps
