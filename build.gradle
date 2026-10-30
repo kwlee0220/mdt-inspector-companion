@@ -9,7 +9,7 @@ group = 'etri'
 version = System.getenv("MDT_BUILD_VERSION") ?: "unknown"
 
 application {
-	mainClass = 'mdt.cli.MDTCommandsMain'
+	mainClass = 'lg.inspector.InspectorCompanion'
 }
 
 java {
@@ -101,11 +101,6 @@ shadowJar {
 	exclude 'META-INF/*.SF'
 	exclude 'META-INF/*.DSA'
 	exclude 'META-INF/*.RSA'
-}
-
-tasks.named('test') {
-	useJUnit()
-	jvmArgs '--add-opens=java.base/java.lang=ALL-UNNAMED'
 }
 
 eclipse {
