@@ -30,29 +30,14 @@ repositories {
 	mavenCentral()
 }
 
-ext {
-	findbugs_version = '3.0.2'
-	jetbrains_version = '24.1.0'
-	paho_version = '1.2.5'
-	
-	// lombok_version = '1.18.46'
-	// logback_version = '1.5.18'
-	picocli_version = '4.7.6'
-	
-	jackson_version = '2.18.4'
-	
-	// progress_bar_version = '0.10.1'
-	// fastcsv_version = '3.4.0'
-}
-
 dependencies {
 	implementation project(":utils")
 	implementation project(":mdt-client")
 	
 	// @Nullable
-	compileOnly "org.jetbrains:annotations:${jetbrains_version}"
+	compileOnly libs.jetbrains.annotations
 	// @GuardedBy
-	compileOnly "com.google.code.findbugs:jsr305:${findbugs_version}"
+	compileOnly libs.findbugs.jsr305
 
 	// // Lombok (from the project :utils)
 	// compileOnly "org.projectlombok:lombok:${lombok_version}"
@@ -62,15 +47,15 @@ dependencies {
 	// implementation "ch.qos.logback:logback-classic:${logback_version}"
 	
 	// picocli command line parser
-	implementation "info.picocli:picocli:${picocli_version}"
-	annotationProcessor "info.picocli:picocli-codegen:${picocli_version}"
+	implementation libs.picocli
+	annotationProcessor libs.picocli.codegen
 	
 	// // ProgressBar
 	// implementation "me.tongfei:progressbar:${progress_bar_version}"
 	
 	// // jackson 
 	// implementation "com.fasterxml.jackson.core:jackson-databind:${jackson_version}"
-	implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jackson_version}"
+	implementation libs.jackson.datatype.jsr310
 	
 	// // CSV
 	// implementation "de.siegmar:fastcsv:${fastcsv_version}"
@@ -82,7 +67,7 @@ dependencies {
 	// implementation "org.postgresql:postgresql:${postgresql_version}"
 	
 	// MQTT
-	implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${paho_version}"
+	implementation libs.paho.mqttv3
 	
 	// testImplementation "junit:junit:${junit_version}"
 	// testImplementation "org.mockito:mockito-core:${mockito_version}"
