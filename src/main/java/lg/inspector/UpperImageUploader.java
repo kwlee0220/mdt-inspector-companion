@@ -16,22 +16,22 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import picocli.CommandLine.Option;
+
 import utils.Preconditions;
-import utils.async.AbstractLoopThreadService;
+import utils.async.AbstractLoopService;
 import utils.io.FileUtils;
 
 import mdt.client.HttpMDTManager;
 import mdt.model.sm.ref.ElementReferences;
 import mdt.model.sm.ref.MDTElementReference;
 
-import picocli.CommandLine.Option;
-
 
 /**
  *
  * @author Kang-Woo Lee (ETRI)
  */
-class UpperImageUploader extends AbstractLoopThreadService {
+class UpperImageUploader extends AbstractLoopService {
 	private static final Logger s_logger = LoggerFactory.getLogger(UpperImageUploader.class);
 	
 	@Option(names={"--dir"}, paramLabel="directory",  description="Target image directory to watch for new images")
